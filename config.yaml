@@ -1,0 +1,171 @@
+telegram:
+  token: "8172313423:AAGGJhyIieE79WAXTc0eGZ9InLDAmjBPBr0"
+  chat_id: "6779935334"
+
+mt5:
+  account: 2663270               # YOUR_MT5_ACCOUNT_NUMBER 
+  password: "K2m*JY8WBma&Y5$"    # YOUR_MT5_PASSWORD
+  server: "Bybit-Demo"           # YOUR_BROKER_SERVER_NAME
+
+# Top 20 liquid instruments across asset classes
+symbols: 
+  # ===== FOREX PAIRS =====
+  # Major Pairs (USD-based)
+  - 'AUDUSD+'
+  - 'EURUSD+'
+  - 'GBPUSD+'
+  - 'NZDUSD+'
+  - 'USDCAD+'
+  - 'USDCHF+'
+  - 'USDJPY+'
+  
+  # Minor/Cross Pairs (Non-USD)
+  - 'AUDCAD+'
+  - 'AUDCHF+'
+  - 'AUDJPY+'
+  - 'AUDNZD+'
+  - 'AUDSGD+'
+  - 'CADCHF+'
+  - 'CADJPY+'
+  - 'CHFJPY+'
+  - 'CHFSGD+'
+  - 'EURAUD+'
+  - 'EURCAD+'
+  - 'EURCHF+'
+  - 'EURGBP+'
+  - 'EURJPY+'
+  - 'EURNZD+'
+  - 'EURSGD+'
+  - 'GBPAUD+'
+  - 'GBPCAD+'
+  - 'GBPCHF+'
+  - 'GBPJPY+'
+  - 'GBPNZD+'
+  - 'GBPSGD+'
+  - 'NZDCAD+'
+  - 'NZDCHF+'
+  - 'NZDJPY+'
+  - 'NZDSGD+'
+  - 'SGDJPY+'
+  
+  # Exotic Pairs (Emerging Markets)
+  - 'EURCZK+'
+  - 'EURDKK+'
+  - 'EURHUF+'
+  - 'EURNOK+'
+  - 'EURPLN+'
+  - 'EURSEK+'
+  - 'EURTRY+'
+  - 'USDBRL+'
+  - 'USDCLP+'
+  - 'USDCNH+'
+  - 'USDCOP+'
+  - 'USDCZK+'
+  - 'USDDKK+'
+  - 'USDHUF+'
+  - 'USDIDR+'
+  - 'USDINR+'
+  - 'USDKRW+'
+  - 'USDMXN+'
+  - 'USDNOK+'
+  - 'USDPLN+'
+  - 'USDSEK+'
+  - 'USDSGD+'
+  - 'USDTHB+'
+  - 'USDTRY+'
+  - 'USDTWD+'
+  - 'USDZAR+'
+
+  # ===== COMMODITIES =====
+  # Metals (Spot & Futures)
+  - 'XAGAUD'
+  - 'XAGUSD'
+  - 'XAUAUD+'
+  - 'XAUEUR+'
+  - 'XAUJPY+'
+  - 'XAUUSD+'
+  - 'XPDUSD'
+  - 'XPTUSD'
+  
+  # Energy
+  - 'GAS-C'
+  - 'GASOIL-C'
+  - 'NG-C'
+  - 'UKOUSD'
+  - 'USOUSD'
+  
+  # Soft Commodities (Agriculture)
+  - 'COPPER-C'
+  - 'Cocoa-C'
+  - 'Coffee-C'
+  - 'Cotton-C'
+  - 'OJ-C'
+  - 'Soybean-C'
+  - 'Sugar-C'
+  - 'Wheat-C'
+
+  # ===== INDICES =====
+  # Americas
+  - 'DJ30'
+  - 'NAS100'
+  - 'SP500'
+  - 'US2000'
+  
+  # Europe
+  - 'ES35'
+  - 'EU50'
+  - 'FRA40'
+  - 'GER40'
+  - 'UK100'
+  
+  # Asia-Pacific
+  - 'CHINA50'
+  - 'HK50'
+  - 'HKTECH'
+  - 'Nikkei225'
+  - 'SGP20'
+  - 'TWINDEX'
+  
+  # Other
+  - 'BVSPX'
+  - 'SA40'
+  - 'SPI200'
+
+# Independent timeframes
+timeframes: 
+  - "M15"
+  - "H1"
+  - "H4"
+  - "D1"
+
+trading_hours:
+  start_hour: 8                # 8 AM server time
+  end_hour: 17                # 5 PM server time
+  trading_days: [1, 2, 3, 4, 5]  # Monday-Friday
+
+# Moving average settings per timeframe
+moving_averages:
+  M15: [5, 10]                # Short-term for 15min
+  H1: [10, 20]                # Medium-term for 1hr
+  H4: [20, 50]                # Long-term for 4hr
+  D1: [50, 200]               # Very long-term for daily
+
+risk:
+  per_trade_risk_pct: 0.005   # Risk 0.5% per trade
+  rr_ratio: 5.0               # 1:5 Risk-Reward
+  max_trades: 50              # Max concurrent trades
+  max_drawdown_pct: 2.0       # 2% daily max drawdown
+  trailing_stop_pct: 20.0     # 20% trailing stop
+  single_pair: True           # One trade per instrument
+
+vwap:
+  source: "typical"           # typical, close, high, low
+  daily_reset_hour: 0         # Midnight reset
+
+avwap:
+  swing_window: 20            # Bars for swing detection
+  min_volume_ratio: 2.0       # Minimum volume spike
+
+strength:
+  min_adr_pct: 1.0            # Min 1% Average Daily Range
+  min_volume: 1000000         # Min daily volume
